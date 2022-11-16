@@ -3,15 +3,19 @@
     "extends": [
       "eslint:recommended",
       "plugin:@typescript-eslint/eslint-recommended",
-      "plugin:@typescript-eslint/recommended"
+      "plugin:@typescript-eslint/recommended",
+      "prettier"
     ],
     "parser": "@typescript-eslint/parser",
     "parserOptions": {
       "project": "./tsconfig.json"
     },
-    "plugins": ["@typescript-eslint"],
+    "plugins": ["@typescript-eslint", "prettier"],
     "rules": {
       "class-methods-use-this": "off",
-      "newline-before-return": 2
+      "newline-before-return": 2,
+      "prettier/prettier": ["error", {
+        "endOfLine": "auto"
+    }]
     }
   }

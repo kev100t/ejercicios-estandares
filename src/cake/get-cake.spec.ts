@@ -1,15 +1,21 @@
-import { getCake } from "./get-cake";
+import { getStastusCake } from "./services";
 
 describe("@RegistryVehicle", () => {
-  it("#Should returns an specific message", async () => {
-    const data = await getCake(true);
+	it("#Should returns a specific message when it receives true", async () => {
+		const sick = true;
 
-    expect(data).toBe('No tendremos torta en la fiesta ya que Kayo está enferma');
-  });
+		const data = await getStastusCake(true);
 
-  it("#Should returns another specific message", async () => {
-    const data = await getCake(false);
+		expect(data).toBe(
+			"No tendremos torta en la fiesta ya que Kayo está enferma"
+		);
+	});
 
-    expect(data).toBe('Kayo hará las tortas para la fiesta');
-  });
+	it("#Should returns a specific message when it receives false", async () => {
+		const sick = false;
+
+		const data = await getStastusCake(false);
+
+		expect(data).toBe("Kayo hará las tortas para la fiesta");
+	});
 });

@@ -1,10 +1,10 @@
-import express from 'express'
-import { getStatusCake } from './controllers';
+import express from "express";
+import { getStatusCake } from "./controllers";
 
 const routes = express.Router({
-  mergeParams: true
+	mergeParams: true,
 });
 
-routes.get('/', getStatusCake);
+routes.get("/", getStatusCake);
 
 export { routes };
